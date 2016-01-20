@@ -8,18 +8,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    @IBOutlet weak var myTableView: UITableView!
+    var arrayOfColleges :[CollegeClass] = []
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        myTableView.dataSource = self
+        myTableView.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func addButtonTapped(sender: AnyObject)
+    {
     }
 
-
+    @IBAction func editButtonTapped(sender: AnyObject)
+    {
+    }
+    //this function creates a cell that wil store your data on your table view
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        
+    }
+    
+    //sets the number of rows in the table view
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        
+    }
+    //alows you to delete rows from the table view
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true // allows you to move rows
+    }
+    
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        
+    }
 }
 
