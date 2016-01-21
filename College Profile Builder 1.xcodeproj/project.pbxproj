@@ -14,7 +14,8 @@
 		3FF77D8E1C4FF624002780A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF77D8C1C4FF624002780A1 /* LaunchScreen.storyboard */; };
 		3FF77D991C4FF625002780A1 /* College_Profile_Builder_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF77D981C4FF625002780A1 /* College_Profile_Builder_1Tests.swift */; };
 		3FF77DA41C4FF625002780A1 /* College_Profile_Builder_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF77DA31C4FF625002780A1 /* College_Profile_Builder_1UITests.swift */; };
-		3FF77DB21C4FF9B0002780A1 /* CollegeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF77DB11C4FF9B0002780A1 /* CollegeClass.swift */; settings = {ASSET_TAGS = (); }; };
+		3FF77DB41C514BC9002780A1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF77DB31C514BC9002780A1 /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3FF77DB61C514BF5002780A1 /* CollegeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF77DB51C514BF5002780A1 /* CollegeClass.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,8 @@
 		3FF77D9F1C4FF625002780A1 /* College Profile Builder 1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "College Profile Builder 1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF77DA31C4FF625002780A1 /* College_Profile_Builder_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College_Profile_Builder_1UITests.swift; sourceTree = "<group>"; };
 		3FF77DA51C4FF625002780A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FF77DB11C4FF9B0002780A1 /* CollegeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeClass.swift; sourceTree = "<group>"; };
+		3FF77DB31C514BC9002780A1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FF77DB51C514BF5002780A1 /* CollegeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 			children = (
 				3FF77D831C4FF624002780A1 /* AppDelegate.swift */,
 				3FF77D851C4FF624002780A1 /* ViewController.swift */,
-				3FF77DB11C4FF9B0002780A1 /* CollegeClass.swift */,
+				3FF77DB31C514BC9002780A1 /* DetailViewController.swift */,
+				3FF77DB51C514BF5002780A1 /* CollegeClass.swift */,
 				3FF77D871C4FF624002780A1 /* Main.storyboard */,
 				3FF77D8A1C4FF624002780A1 /* Assets.xcassets */,
 				3FF77D8C1C4FF624002780A1 /* LaunchScreen.storyboard */,
@@ -259,8 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF77D861C4FF624002780A1 /* ViewController.swift in Sources */,
-				3FF77DB21C4FF9B0002780A1 /* CollegeClass.swift in Sources */,
 				3FF77D841C4FF624002780A1 /* AppDelegate.swift in Sources */,
+				3FF77DB61C514BF5002780A1 /* CollegeClass.swift in Sources */,
+				3FF77DB41C514BC9002780A1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +491,7 @@
 				3FF77DAA1C4FF625002780A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FF77DAB1C4FF625002780A1 /* Build configuration list for PBXNativeTarget "College Profile Builder 1Tests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				3FF77DAD1C4FF625002780A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FF77DAE1C4FF625002780A1 /* Build configuration list for PBXNativeTarget "College Profile Builder 1UITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				3FF77DB01C4FF625002780A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
