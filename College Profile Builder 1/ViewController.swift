@@ -19,17 +19,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.dataSource = self
         myTableView.delegate = self
         
-        //arrayOfColleges.append(CollegeClass(Name: "Northwestern", Location: "Evanston, IL", NumberOfStudents: 1234, Picture: UIImage(named: "Northwestern")!))
+        arrayOfColleges.append(CollegeClass(Name: "Northwestern", Location: "Evanston, IL", NumberOfStudents: 1234, Picture: UIImage(named: "Northwestern")!))
+        arrayOfColleges.append(CollegeClass(Name: "Michigan State", Location: "East Lansing, MI", NumberOfStudents: 1234, Picture: UIImage(named: "Michigan State")!))
+        arrayOfColleges.append(CollegeClass(Name: "Wisconsin", Location: "Madison, WI", NumberOfStudents: 1234, Picture: UIImage(named: "Wisconsin")!))
+        arrayOfColleges.append(CollegeClass(Name: "Iowa State", Location: "Ames, IA", NumberOfStudents: 1234, Picture: UIImage(named: "Iowa State")!))
     }
 
     @IBAction func addButtonTapped(sender: AnyObject)
     {
+        let myAlert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
+        myAlert.addAction(cancelAction)
+        
+        let addAction = UIAlertAction(title: "Add", style: .Default)
+        { (addAction) -> Void in
+                let nameTextField = myAlert.textFields![0] as UITextField
+                let locationTextField = myAlert.textFields![1] as UITextField
+                self.arrayOfColleges.append(CollegeClass(Name: nameTextField.text!, Location: locationTextField.text!))
+        }
+        
+        myAlert.addAction(addAction)
+        
+        
+        myAlert.addTextFieldWithConfigurationHandler
+            { (nameTextField) -> Void in
+                nameTextField.placeholder = "Add College Name"
+        }
+        myAlert.addTextFieldWithConfigurationHandler
+            { (locationTextField) -> Void in
+                locationTextField.placeholder = "Add Location"
+        }
+        
+        
+        
+        self.presentViewController(myAlert, animated: true, completion: nil) //presents the alert view
     }
 
     @IBAction func editButtonTapped(sender: AnyObject)
     {
+        myTableView.editing = !myTableView.editing
     }
+    
     //this function creates a cell that wil store your data on your table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
