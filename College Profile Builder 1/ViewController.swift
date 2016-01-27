@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         arrayOfColleges.append(CollegeClass(Name: "Michigan State", Location: "East Lansing, MI", NumberOfStudents: 1234, Picture: UIImage(named: "Michigan State")!))
         arrayOfColleges.append(CollegeClass(Name: "Wisconsin", Location: "Madison, WI", NumberOfStudents: 1234, Picture: UIImage(named: "Wisconsin")!))
         arrayOfColleges.append(CollegeClass(Name: "Iowa State", Location: "Ames, IA", NumberOfStudents: 1234, Picture: UIImage(named: "Iowa State")!))
+        arrayOfColleges.append(CollegeClass(Name: "Colorado", Location: "Boulder, CO", NumberOfStudents: 1234, Picture: UIImage(named: "Colorado")!))
     }
 
     @IBAction func addButtonTapped(sender: AnyObject)
@@ -37,6 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let nameTextField = myAlert.textFields![0] as UITextField
                 let locationTextField = myAlert.textFields![1] as UITextField
                 self.arrayOfColleges.append(CollegeClass(Name: nameTextField.text!, Location: locationTextField.text!))
+                self.myTableView.reloadData()
         }
         
         myAlert.addAction(addAction)
@@ -97,6 +99,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let college = arrayOfColleges[sourceIndexPath.row]
         arrayOfColleges.removeAtIndex(sourceIndexPath.row)
         arrayOfColleges.insert(college, atIndex: destinationIndexPath.row)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let detailVC = segue.destinationViewController as! DetailViewController
+        let selectedRow = myTableView.indexPathForSelectedRow?.row
+        detailVC.college = arrayOfColleges[selectedRow!] //detailVC.superhero(reciever) = superheros[selectedRow](quarterback)
     }
 }
 
