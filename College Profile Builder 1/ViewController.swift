@@ -19,11 +19,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.dataSource = self
         myTableView.delegate = self
         
-        arrayOfColleges.append(CollegeClass(Name: "Northwestern", Location: "Evanston, IL", NumberOfStudents: 1234, Picture: UIImage(named: "Northwestern")!))
-        arrayOfColleges.append(CollegeClass(Name: "Michigan State", Location: "East Lansing, MI", NumberOfStudents: 1234, Picture: UIImage(named: "Michigan State")!))
-        arrayOfColleges.append(CollegeClass(Name: "Wisconsin", Location: "Madison, WI", NumberOfStudents: 1234, Picture: UIImage(named: "Wisconsin")!))
-        arrayOfColleges.append(CollegeClass(Name: "Iowa State", Location: "Ames, IA", NumberOfStudents: 1234, Picture: UIImage(named: "Iowa State")!))
-        arrayOfColleges.append(CollegeClass(Name: "Colorado", Location: "Boulder, CO", NumberOfStudents: 1234, Picture: UIImage(named: "Colorado")!))
+        arrayOfColleges.append(CollegeClass(Name: "Northwestern", Location: "Evanston, IL", NumberOfStudents: 1234, Picture: UIImage(named: "Northwestern")!, Webpage: "http://www.northwestern.edu"))
+        arrayOfColleges.append(CollegeClass(Name: "Michigan State", Location: "East Lansing, MI", NumberOfStudents: 1234, Picture: UIImage(named: "Michigan State")!, Webpage: "https://msu.edu"))
+        arrayOfColleges.append(CollegeClass(Name: "Wisconsin", Location: "Madison, WI", NumberOfStudents: 1234, Picture: UIImage(named: "Wisconsin")!, Webpage: "https://www.wisc.edu"))
+        arrayOfColleges.append(CollegeClass(Name: "Iowa State", Location: "Ames, IA", NumberOfStudents: 1234, Picture: UIImage(named: "Iowa State")!, Webpage: "https://www.iastate.edu"))
+        arrayOfColleges.append(CollegeClass(Name: "Colorado", Location: "Boulder, CO", NumberOfStudents: 1234, Picture: UIImage(named: "Colorado")!, Webpage: "http://www.colorado.edu"))
+         arrayOfColleges.append(CollegeClass(Name: "Arizona State", Location: "Tempe, AZ", NumberOfStudents: 1234, Picture: UIImage(named: "ASU")!, Webpage: "http://www.asu.edu"))
     }
 
     @IBAction func addButtonTapped(sender: AnyObject)
@@ -37,7 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         { (addAction) -> Void in
                 let nameTextField = myAlert.textFields![0] as UITextField
                 let locationTextField = myAlert.textFields![1] as UITextField
-                self.arrayOfColleges.append(CollegeClass(Name: nameTextField.text!, Location: locationTextField.text!))
+                let websiteTextField = myAlert.textFields! [2] as UITextField
+                self.arrayOfColleges.append(CollegeClass(Name: nameTextField.text!, Location: locationTextField.text!, Webpage: websiteTextField.text!))
                 self.myTableView.reloadData()
         }
         
@@ -51,6 +53,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myAlert.addTextFieldWithConfigurationHandler
             { (locationTextField) -> Void in
                 locationTextField.placeholder = "Add Location"
+        }
+        myAlert.addTextFieldWithConfigurationHandler
+            { (locationTextField) -> Void in
+                locationTextField.placeholder = "Add Website"
         }
         
         

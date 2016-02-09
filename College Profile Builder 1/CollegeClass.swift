@@ -14,21 +14,24 @@ class CollegeClass: NSObject
     var location = ""
     var numberOfStudents = 0
     var picture = UIImage(named: "Default")
+    var webpage = ""
     
-    init(Name: String, Location: String, NumberOfStudents: Int, Picture: UIImage) //convinence initializers makes objects of the SuperheroClass
+    init(Name: String, Location: String, NumberOfStudents: Int, Picture: UIImage, Webpage: String) //convinence initializers makes objects of the SuperheroClass
     {
         super.init()
         name = Name
         location = Location
         numberOfStudents = NumberOfStudents
         picture = Picture
+        webpage = Webpage
     }
     
-    init(Name: String, Location: String) //convinence initializers makes objects of the SuperheroClass
+    init(Name: String, Location: String, Webpage: String) //convinence initializers makes objects of the SuperheroClass
     {
         super.init()
         name = Name
         location = Location
+        webpage = Webpage
     }
 
 
