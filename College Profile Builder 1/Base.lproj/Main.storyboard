@@ -138,6 +138,13 @@
                                     <action selector="changePhotoButtonTapped:" destination="ajP-y0-dZi" eventType="touchUpInside" id="Y6g-5y-n8R"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV9-IO-jBD">
+                                <rect key="frame" x="109" y="550" width="75" height="30"/>
+                                <state key="normal" title="Go To Map"/>
+                                <connections>
+                                    <segue destination="dQ7-6V-ijR" kind="show" id="ra5-MF-8Ip"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -161,6 +168,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBN-4E-7gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2011" y="299"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="OLz-7C-Sdy">
+            <objects>
+                <viewController id="dQ7-6V-ijR" customClass="MapViewController" customModule="College_Profile_Builder_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="djg-KC-Yfi"/>
+                        <viewControllerLayoutGuide type="bottom" id="HS0-RH-Ost"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4nc-E9-bqE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uRv-P6-pcg">
+                                <rect key="frame" x="125" y="133" width="240" height="128"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-1Z-VnC">
+                                <rect key="frame" x="0.0" y="64" width="419" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymw-GD-35b">
+                                <rect key="frame" x="439" y="64" width="48" height="30"/>
+                                <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="dQ7-6V-ijR" eventType="touchUpInside" id="YTE-pE-eTN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uRv-P6-pcg" secondAttribute="trailing" constant="-20" id="0f1-pK-y1H"/>
+                            <constraint firstItem="p4e-1Z-VnC" firstAttribute="top" secondItem="djg-KC-Yfi" secondAttribute="bottom" id="7CX-Xl-qU2"/>
+                            <constraint firstItem="Ymw-GD-35b" firstAttribute="leading" secondItem="p4e-1Z-VnC" secondAttribute="trailing" constant="20" id="A8b-l1-Tdh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ymw-GD-35b" secondAttribute="trailing" constant="20" id="Dz3-AF-lY9"/>
+                            <constraint firstItem="p4e-1Z-VnC" firstAttribute="leading" secondItem="4nc-E9-bqE" secondAttribute="leadingMargin" constant="10" id="Ksg-lY-m6k"/>
+                            <constraint firstItem="Ymw-GD-35b" firstAttribute="leading" secondItem="p4e-1Z-VnC" secondAttribute="trailing" constant="20" id="W4G-Ik-5oB"/>
+                            <constraint firstItem="uRv-P6-pcg" firstAttribute="top" secondItem="p4e-1Z-VnC" secondAttribute="bottom" constant="-30" id="efV-2p-Lw0"/>
+                            <constraint firstItem="uRv-P6-pcg" firstAttribute="leading" secondItem="4nc-E9-bqE" secondAttribute="leading" constant="-20" id="eji-l2-eqM"/>
+                            <constraint firstItem="HS0-RH-Ost" firstAttribute="top" secondItem="uRv-P6-pcg" secondAttribute="bottom" id="hKT-Ld-CSx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="uRv-P6-pcg" id="Vff-ID-a4A"/>
+                        <outlet property="myTextField" destination="p4e-1Z-VnC" id="Wht-D4-XMG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NQ-Iv-cUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707" y="297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zJL-ha-iml">
